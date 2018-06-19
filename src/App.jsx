@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Core from './exmaples/Core';
-import Status from './exmaples/Status';
-import Condition from './exmaples/Condition';
-import Validation from './exmaples/Validation';
-import Antd from './exmaples/Antd';
-import Dialog from './exmaples/Dialog';
+import Core from './examples/Core';
+import Status from './examples/Status';
+import Condition from './examples/Condition';
+import Validation from './examples/Validation';
+import Antd from './examples/Antd';
+import Dialog from './examples/Dialog';
 import './App.less';
 import { Checkbox } from 'antd';
 const CheckboxGroup = Checkbox.Group;
@@ -13,7 +13,7 @@ class App extends Component {
     constructor(props, context) {
         super(props, context);
 
-        this.exmaplesMap = {
+        this.examplesMap = {
             'Core': Core,
             'Status': Status,
             'Condition': Condition,
@@ -22,12 +22,12 @@ class App extends Component {
             'Dialog': Dialog
         };
 
-        this.examplesOptions = Object.keys(this.exmaplesMap).map((exampleKey) => {
-            return { label: exampleKey, value: this.exmaplesMap[exampleKey] }
+        this.examplesOptions = Object.keys(this.examplesMap).map((exampleKey) => {
+            return { label: exampleKey, value: this.examplesMap[exampleKey] }
         });
 
         this.state = {
-            examples: Object.keys(this.exmaplesMap)
+            examples: Object.keys(this.examplesMap)
         };
     }
 
@@ -35,7 +35,7 @@ class App extends Component {
         // const examples = [Core, Status, Condition, Validation, Antd, Dialog];
         const { examples } = this.state;
         const eles = examples.map((exampleKey) => {
-            const ele = React.createElement(this.exmaplesMap[exampleKey]);
+            const ele = React.createElement(this.examplesMap[exampleKey]);
             return (<div className="example-item-wrapper">
                 {ele}
             </div>);
